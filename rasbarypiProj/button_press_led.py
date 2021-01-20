@@ -18,5 +18,7 @@ while True:
     GPIO.output(ledPin, GPIO.HIGH)
     GPIO.wait_for_the_edge(buttonPin, GPIO.RISING)
     GPIO.output(ledPin, GPIO.LOW)
+    time.sleep(0.3)
+    GPIO.output(ledPin, GPIO.LOW)
 
 GPIO.cleanup()
