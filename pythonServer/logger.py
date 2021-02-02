@@ -6,7 +6,7 @@ import time
 import os
 
 
-class Cron_logger:
+class Logger:
 
     log = None
 
@@ -18,7 +18,8 @@ class Cron_logger:
         now = datetime.datetime.now()
         date = now.strftime("%Y%m%d")
         #fileName = '/home/pi/Desktop/cornTest/logCron'+date+'.txt'
-        fileName = './'+date+'.txt'
+        dir_path = os.path.dirname(os.path.realpath(__file__)) + '/logs/rpi.txt'
+        fileName = dir_path
 
         if os.path.isfile(fileName):
             self.log = open(fileName, 'a')
