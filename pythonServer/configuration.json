@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "name": "module1",
+      "id": "141726673897430",
+      "light_on": ["8:00", "11:00", "16:00"],
+      "light_off": ["10:00", "13:00", "20:00"],
+      "watering": ["5:00", "9:00"],
+      "is_active": true,
+      "level_status": [true, true, true, true, true],
+      "time_to_water": 30,
+      "time_to_fill_irrigation_tank": 100,
+      "min_water_level": 30,
+      "ph_max": 9.5,
+      "ph_min": 5.5,
+      "ec_max": 9.5,
+      "ec_min": 5.5,
+      "additive_pump_time": 2,
+      "additive_pump_max_loop": 3
+    }
+  ]
+}

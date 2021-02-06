@@ -1,48 +1,162 @@
 
- Executing at: 2021-02-02 16:23:26 
-email=asrsnd%40apiato.com&password=123456&name=Arthur%20Apiato&gender=male&birth=1979-09-02&first_name=Arthur&last_name=Apiato&phone_number=1234567890&country=Ethiopia&city=Addis%20Ababa&sub_city=Boleadsfa%20&latitude_location=12345678909743&longitude_location=1234567890765
+ Executing at: 2021-02-04 12:06:33 
+name=module1&id=141726673897430&light_on=8%3A00&light_on=11%3A00&light_on=16%3A00&light_off=10%3A00&light_off=13%3A00&light_off=20%3A00&watering=5%3A00&watering=9%3A00&is_active=True&level_status=True&level_status=True&level_status=True&level_status=False&level_status=False&time_to_water=30&tome_to_fill_irrigation_tank=100&min_water_level=30&ph_max=9.5&ph_min=5.5&additive_pump_time=2&additive_pump_max_loop=3
  
 
- Executing at: 2021-02-02 17:14:08 
-email=asrsnd%40apiato.com&password=123456&name=Arthur%20Apiato&gender=male&birth=1979-09-02&first_name=Arthur&last_name=Apiato&phone_number=1234567890&country=Ethiopia&city=Addis%20Ababa&sub_city=Boleadsfa%20&latitude_location=12345678909743&longitude_location=1234567890765
+ Executing at: 2021-02-04 12:06:47 
+name=module1&id=141726673897430&light_on=8%3A00&light_on=11%3A00&light_on=16%3A00&light_off=10%3A00&light_off=13%3A00&light_off=20%3A00&watering=5%3A00&watering=9%3A00&is_active=True&level_status=True&level_status=True&level_status=True&level_status=False&level_status=False&time_to_water=30&tome_to_fill_irrigation_tank=100&min_water_level=30&ph_max=9.5&ph_min=5.5&additive_pump_time=2&additive_pump_max_loop=3
  
 
- Executing at: 2021-02-02 17:14:09 
-email=asrsnd%40apiato.com&password=123456&name=Arthur%20Apiato&gender=male&birth=1979-09-02&first_name=Arthur&last_name=Apiato&phone_number=1234567890&country=Ethiopia&city=Addis%20Ababa&sub_city=Boleadsfa%20&latitude_location=12345678909743&longitude_location=1234567890765
+ Executing at: 2021-02-04 12:07:09 
+name=module1&id=141726673897430&light_on=8%3A00&light_on=11%3A00&light_on=16%3A00&light_off=10%3A00&light_off=13%3A00&light_off=20%3A00&watering=5%3A00&watering=9%3A00&is_active=True&level_status=True&level_status=True&level_status=True&level_status=False&level_status=False&time_to_water=30&tome_to_fill_irrigation_tank=100&min_water_level=30&ph_max=9.5&ph_min=5.5&additive_pump_time=2&additive_pump_max_loop=3
  
 
- Executing at: 2021-02-02 18:28:51 
-email=asrsnd%40apiato.com&password=123456&name=Arthur%20Apiato&gender=male&birth=1979-09-02&first_name=Arthur&last_name=Apiato&phone_number=1234567890&country=Ethiopia&city=Addis%20Ababa&sub_city=Boleadsfa%20&latitude_location=12345678909743&longitude_location=1234567890765
+ Executing at: 2021-02-04 12:07:17 
+name=module1&id=141726673897430&light_on=8%3A00&light_on=11%3A00&light_on=16%3A00&light_off=10%3A00&light_off=13%3A00&light_off=20%3A00&watering=5%3A00&watering=9%3A00&is_active=True&level_status=True&level_status=True&level_status=True&level_status=False&level_status=False&time_to_water=30&tome_to_fill_irrigation_tank=100&min_water_level=30&ph_max=9.5&ph_min=5.5&additive_pump_time=2&additive_pump_max_loop=3
  
 
- Executing at: 2021-02-02 18:29:04 
-email=asrsnd%40apiato.com&password=123456&name=Arthur%20Apiato&gender=male&birth=1979-09-02&first_name=Arthur&last_name=Apiato&phone_number=1234567890&country=Ethiopia&city=Addis%20Ababa&sub_city=Boleadsfa%20&latitude_location=12345678909743&longitude_location=1234567890765
+ Executing at: 2021-02-04 12:07:44 
+141726673897430
  
 
- Executing at: 2021-02-02 18:29:05 
-email=asrsnd%40apiato.com&password=123456&name=Arthur%20Apiato&gender=male&birth=1979-09-02&first_name=Arthur&last_name=Apiato&phone_number=1234567890&country=Ethiopia&city=Addis%20Ababa&sub_city=Boleadsfa%20&latitude_location=12345678909743&longitude_location=1234567890765
+ Executing at: 2021-02-04 12:07:48 
+141726673897430
  
 
- Executing at: 2021-02-02 18:29:06 
-email=asrsnd%40apiato.com&password=123456&name=Arthur%20Apiato&gender=male&birth=1979-09-02&first_name=Arthur&last_name=Apiato&phone_number=1234567890&country=Ethiopia&city=Addis%20Ababa&sub_city=Boleadsfa%20&latitude_location=12345678909743&longitude_location=1234567890765
+ Executing at: 2021-02-04 12:08:14 
+141726673897430
  
 
- Executing at: 2021-02-02 18:31:41 
-This is a test file
+ Executing at: 2021-02-04 12:54:36 
+ {
+      "name": "module1",
+      "id": "141726673897430",
+      "light_on": ["8:00", "11:00", "16:00"],
+      "light_off": ["10:00", "13:00", "20:00"],
+      "watering": ["5:00", "9:00"],
+      "is_active": true,
+      "level_status": [true, true, true, false, false],
+      "time_to_water": 30,
+      "tome_to_fill_irrigation_tank": 100,
+      "min_water_level": 30,
+      "ph_max": 9.5,
+      "ph_min": 5.5,
+      "additive_pump_time": 2,
+      "additive_pump_max_loop": 3
+    }
  
 
- Executing at: 2021-02-02 18:32:08 
-email=asrsnd%40apiato.com&password=123456&name=Arthur%20Apiato&gender=male&birth=1979-09-02&first_name=Arthur&last_name=Apiato&phone_number=1234567890&country=Ethiopia&city=Addis%20Ababa&sub_city=Boleadsfa%20&latitude_location=12345678909743&longitude_location=1234567890765
+ Executing at: 2021-02-04 12:55:51 
+ {
+      "name": "module1",
+      "id": "141726673897430",
+      "light_on": ["8:00", "11:00", "16:00"],
+      "light_off": ["10:00", "13:00", "20:00"],
+      "watering": ["5:00", "9:00"],
+      "is_active": true,
+      "level_status": [true, true, true, false, false],
+      "time_to_water": 30,
+      "tome_to_fill_irrigation_tank": 100,
+      "min_water_level": 30,
+      "ph_max": 9.5,
+      "ph_min": 5.5,
+      "additive_pump_time": 2,
+      "additive_pump_max_loop": 3
+    }
  
 
- Executing at: 2021-02-02 18:32:27 
-This is a test file
+ Executing at: 2021-02-04 12:56:21 
+ {
+      "name": "module1",
+      "id": "141726673897430",
+      "light_on": ["8:00", "11:00", "16:00"],
+      "light_off": ["10:00", "13:00", "20:00"],
+      "watering": ["5:00", "9:00"],
+      "is_active": true,
+      "level_status": [true, true, true, false, false],
+      "time_to_water": 30,
+      "tome_to_fill_irrigation_tank": 100,
+      "min_water_level": 30,
+      "ph_max": 9.5,
+      "ph_min": 5.5,
+      "additive_pump_time": 2,
+      "additive_pump_max_loop": 3
+    }
  
 
- Executing at: 2021-02-02 18:32:40 
-This is a test file
+ Executing at: 2021-02-04 12:56:24 
+ {
+      "name": "module1",
+      "id": "141726673897430",
+      "light_on": ["8:00", "11:00", "16:00"],
+      "light_off": ["10:00", "13:00", "20:00"],
+      "watering": ["5:00", "9:00"],
+      "is_active": true,
+      "level_status": [true, true, true, false, false],
+      "time_to_water": 30,
+      "tome_to_fill_irrigation_tank": 100,
+      "min_water_level": 30,
+      "ph_max": 9.5,
+      "ph_min": 5.5,
+      "additive_pump_time": 2,
+      "additive_pump_max_loop": 3
+    }
  
 
- Executing at: 2021-02-02 18:32:42 
-This is a test file
+ Executing at: 2021-02-04 12:57:04 
+ {
+      "name": "module1",
+      "id": "141726673897430",
+      "light_on": ["8:00", "11:00", "16:00"],
+      "light_off": ["10:00", "13:00", "20:00"],
+      "watering": ["5:00", "9:00"],
+      "is_active": true,
+      "level_status": [true, true, true, false, false],
+      "time_to_water": 30,
+      "tome_to_fill_irrigation_tank": 100,
+      "min_water_level": 30,
+      "ph_max": 9.5,
+      "ph_min": 5.5,
+      "additive_pump_time": 2,
+      "additive_pump_max_loop": 3
+    }
+ 
+
+ Executing at: 2021-02-04 13:02:05 
+ {
+      "name": "module1",
+      "id": "141726673897430",
+      "light_on": ["8:00", "11:00", "16:00"],
+      "light_off": ["10:00", "13:00", "20:00"],
+      "watering": ["5:00", "9:00"],
+      "is_active": true,
+      "level_status": [true, true, true, false, false],
+      "time_to_water": 30,
+      "tome_to_fill_irrigation_tank": 100,
+      "min_water_level": 30,
+      "ph_max": 9.5,
+      "ph_min": 5.5,
+      "additive_pump_time": 2,
+      "additive_pump_max_loop": 3
+    }
+ 
+
+ Executing at: 2021-02-04 13:06:49 
+141726673897430
+ 
+
+ Executing at: 2021-02-04 13:09:35 
+141726673897430
+ 
+
+ Executing at: 2021-02-04 13:10:03 
+141726673897430
+ 
+
+ Executing at: 2021-02-04 13:10:55 
+141726673897430
+ 
+
+ Executing at: 2021-02-04 13:11:54 
+141726673897430
  
