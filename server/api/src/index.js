@@ -1,25 +1,20 @@
 const express = require("express");
 const app = express();
+const { spawn } = require('child_process');
 
 app.get("/", function(request, response) {
-  response.send({ message: "Czytaj kod!" });
+  response.send({ message: "Welcome to Gronska!" });
 });
 
 app.get("/turn_on", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  response.send({
-    status: "sucess",
-    email: "Growing light turned on"
-  });
-  const { spawn } = require('child_process');
-  const pyProg = spawn('python', ['./../pypy.py']);
-
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_on_growing_light.py']);
   pyProg.stdout.on('data', function(data) {
 
       console.log(data.toString());
       response.send({
-        status: "sucess",
+        status: "success",
         email: "Growing light turned on"
       });
   });
@@ -28,18 +23,26 @@ app.get("/turn_on", function(request, response) {
 app.get("/turn_off", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  response.send({
-    status: "success",
-    message: "Growing light turned off"
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  pyProg.stdout.on('data', function(data) {
+      console.log(data.toString());
+      response.send({
+        status: "success",
+        email: "Growing light turned off"
+      });
   });
 });
 
 app.get("/water_cabins", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  response.send({
-    status: "success",
-    message: "Watering cabin started"
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_watering.py']);
+  pyProg.stdout.on('data', function(data) {
+      console.log(data.toString());
+      response.send({
+        status: "success",
+        email: "Cabins are watered"
+      });
   });
 });
 
