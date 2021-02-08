@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Card from "./Card";
+import Editor from "./JsonEditor";
 
-window.location.href
-const BASE = `http:${window.location.href.split(':')[1]}:8080/`
-
+const BASE = `http:${window.location.href.split(":")[1]}:8080/`;
 const StyledCardGrid = styled.div`
   position: relative;
   display: grid;
@@ -27,52 +26,55 @@ const CardGrid = ({
     switch (index) {
       case 0:
         fetch(`${BASE}turn_on`)
-        .then(response => response.json())
-        .then(data => console.log(data));
+          .then((response) => response.json())
+          .then((data) => console.log(data));
         break;
       case 1:
         fetch(`${BASE}turn_off`)
-        .then(response => response.json())
-        .then(data => console.log(data));
+          .then((response) => response.json())
+          .then((data) => console.log(data));
         break;
       case 2:
         fetch(`${BASE}open_door`)
-        .then(response => response.json())
-        .then(data => console.log(data));
+          .then((response) => response.json())
+          .then((data) => console.log(data));
         break;
       case 3:
         fetch(`${BASE}close_door`)
-        .then(response => response.json())
-        .then(data => console.log(data));
+          .then((response) => response.json())
+          .then((data) => console.log(data));
         break;
       case 4:
         fetch(`${BASE}water_cabins`)
-        .then(response => response.json())
-        .then(data => console.log(data));
+          .then((response) => response.json())
+          .then((data) => console.log(data));
         break;
       case 5:
         fetch(`${BASE}setting`)
-        .then(response => response.json())
-        .then(data => console.log(data));
+          .then((response) => response.json())
+          .then((data) => console.log(data));
         break;
       default:
         console.log("Sorry don't know what to do");
     }
   };
   return (
-    <StyledCardGrid className={gridClasses} {...props}>
-      {cards.map((card, index) => (
-        <a onClick={() => callAction(index)}>
-          <Card
-            key={index}
-            wide={wide}
-            {...card}
-            easeSpeed={easeSpeed}
-            easeFunction={easeFunction}
-          />
-        </a>
-      ))}
-    </StyledCardGrid>
+    <div>
+      <StyledCardGrid className={gridClasses} {...props}>
+        {cards.map((card, index) => (
+          <a onClick={() => callAction(index)}>
+            <Card
+              key={index}
+              wide={wide}
+              {...card}
+              easeSpeed={easeSpeed}
+              easeFunction={easeFunction}
+            />
+          </a>
+        ))}
+      </StyledCardGrid>
+      <Editor />
+    </div>
   );
 };
 

@@ -69,7 +69,7 @@ app.get("/setting", function(request, response) {
   response.header("Access-Control-Allow-Origin", "*");
   response.send({
     status: "success",
-    message: "Door opened"
+    message: "Show Setting"
   });
 });
 
