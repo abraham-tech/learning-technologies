@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import Editor from "./JsonEditor";
@@ -58,6 +58,7 @@ const CardGrid = ({
         console.log("Sorry don't know what to do");
     }
   };
+
   return (
     <div>
       <StyledCardGrid className={gridClasses} {...props}>
