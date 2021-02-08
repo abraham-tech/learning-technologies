@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const { spawn } = require('child_process');
-var cors = require('cors');
-var bodyParser = require('body-parser')
-
+const cors = require('cors');
+const bodyParser = require('body-parser')
+const fs = require('fs')
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded())
 
@@ -76,34 +76,18 @@ app.get("/close_door", function(request, response) {
 app.get("/setting", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  response.send({
-    status: "success",
-    setting : {
-      "name": "module2",
-      "id": "150538576906428",
-      "EmergencyStop": true,
-      "light_on": ["08:00"],
-      "light_off": ["22:00"],
-      "watering": ["09:00", "13:00", "17:00"],
-      "is_active": true,
-      "level_status": [true, true, true, true, true],
-      "time_to_water": 3,
-      "time_to_fill_irrigation_tank": 100,
-      "min_water_level": 30,
-      "ph_max": 5.8,
-      "ph_min": 5.6,
-      "ec_max": 2.0,
-      "ec_min": 1.8,
-      "additive_pump_time": 2,
-      "additive_pump_max_loop": 3
-    }
-
-  });
+  fs.readFile('/home/pi/Gronska/schedule/configuration.json', (err, data) => {
+    if (err) throw err;
+    let config = JSON.parse(data);
+    response.send({config})
+});
 });
 
 app.post('/settings',function(req,res){
   var configuration = req.body;
 
+  let data = JSON.stringify(configuration);
+  fs.writeFileSync('/home/pi/Gronska/schedule/configuration.json', data);
   console.log("Configuration ", req);
   res.end("yes");
 });
