@@ -58,24 +58,19 @@ function App() {
 
   return (
     <Container>
-      <Row>
-        <Col xs="12" lg="10" className="p-3">
-          <CardDeck>
-            <Card>
-              <Card.Body>
-                {console.log("setting >>", setting)}
-                <Editor
-                  ref={setRef}
-                  value={setting}
-                  onChange={console.log("on change called")}
-                />
-                <br />
-                <Button onClick={() => updateSetting()}>Save</Button>
-              </Card.Body>
-            </Card>
-          </CardDeck>
-        </Col>
-      </Row>
+      <CardDeck>
+        <Card>
+          <Card.Body>
+            {console.log("setting >>", setting)}
+            <Editor
+              ref={setRef}
+              value={setting}
+            />
+            <br />
+            <Button onClick={() => updateSetting()}>Save</Button>
+          </Card.Body>
+        </Card>
+      </CardDeck>
     </Container>
   );
 }

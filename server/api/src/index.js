@@ -27,6 +27,10 @@ app.get("/turn_on", function(request, response) {
         email: "Growing light turned on"
       });
   });
+  response.send({
+    status: "success",
+    email: "Growing light turned on"
+  });
 });
 
 app.get("/turn_off", function(request, response) {
