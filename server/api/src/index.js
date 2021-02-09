@@ -27,10 +27,6 @@ app.get("/turn_on", function(request, response) {
         email: "Growing light turned on"
       });
   });
-  response.send({
-    status: "success",
-    email: "Growing light turned on"
-  });
 });
 
 app.get("/turn_off", function(request, response) {
@@ -92,8 +88,20 @@ app.post('/settings',function(req,res){
 
   let data = JSON.stringify(configuration);
   fs.writeFileSync('/home/pi/Gronska/schedule/configuration.json', data);
-  console.log("Configuration ", req);
   res.end("yes");
+});
+
+app.get('/reset',function(req,res){
+  let data = JSON.stringify({"configurations":[]});
+  fs.writeFileSync('/home/pi/Gronska/schedule/configuration.json', data);
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/schedule.py']);
+  pyProg.stdout.on('data', function(data) {
+      console.log(data.toString());
+      response.send({
+        status: "success",
+        email: "Growing light turned off"
+      });
+  });
 });
 
 const listener = app.listen("8080", function() {
