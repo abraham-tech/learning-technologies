@@ -9,7 +9,7 @@ const StyledLoader = styled.span`
   height: 80px;
   margin: -12px;
   animation: fade-in 0.3s 0.15s ${({ ease }) => ease} forwards,
-    spin 0.75s steps(8, end) infinite;
+    ${'' /* spin 0.75s steps(8, end) infinite; */}
   opacity: 0;
 
   @keyframes fade-in {

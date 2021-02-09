@@ -457,6 +457,13 @@ const Card = ({
     e.stopPropagation();
   };
 
+  const handleLoading = () => {
+    setToLoading(true);
+    setTimeout(() => {
+      setToLoading(false);
+    }, 2000);
+  };
+
   const [cardVisibility, updateCardVisibility] = useState(false);
 
   useEffect(() => {
@@ -555,7 +562,7 @@ const Card = ({
       star={star}
       easeSpeed={easeSpeed}
       easeFunction={easeFunction}
-      // onClick={() => setToLoading(true)}
+      onClick={() => handleLoading()}
     >
       <div className={`card__content${loading ? " loading" : ""}`}>
         <div className="card__logo-wrapper">
