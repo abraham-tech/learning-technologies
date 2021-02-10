@@ -50,7 +50,7 @@ const CardGrid = ({
           .then((data) => console.log(data));
         break;
       case 5:
-        fetch(`${BASE}setting`)
+        fetch(`${BASE}reset`)
           .then((response) => response.json())
           .then((data) => console.log(data));
         break;

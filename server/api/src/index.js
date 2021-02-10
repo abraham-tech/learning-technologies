@@ -18,7 +18,7 @@ app.get("/", function(request, response) {
 app.get("/turn_on", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_on_growing_light.py']);
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_on_growing_light.py'], {cwd: '/home/pi/Gronska/schedule/'});
   pyProg.stdout.on('data', function(data) {
 
       console.log(data.toString());
@@ -45,7 +45,7 @@ app.get("/turn_off", function(request, response) {
 app.get("/water_cabins", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_watering.py']);
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_watering.py'],{cwd:'/home/pi/Gronska/schedule'});
   pyProg.stdout.on('data', function(data) {
       console.log(data.toString());
       response.send({
@@ -92,14 +92,15 @@ app.post('/settings',function(req,res){
 });
 
 app.get('/reset',function(req,res){
-  let data = JSON.stringify({"configurations":[]});
+  let data = JSON.stringify({});
   fs.writeFileSync('/home/pi/Gronska/schedule/configuration.json', data);
-  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/schedule.py']);
+  setTimeout(function(){ console.log("...... "); }, 1000);
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/schedule.py'], {cwd: "/home/pi/Gronska/schedule"});
   pyProg.stdout.on('data', function(data) {
       console.log(data.toString());
-      response.send({
+      res.send({
         status: "success",
-        email: "Growing light turned off"
+        message: "Growing light turned off"
       });
   });
 });
