@@ -52,7 +52,10 @@ const CardGrid = ({
       case 5:
         fetch(`${BASE}reset`)
           .then((response) => response.json())
-          .then((data) => console.log(data));
+          .then((data) => {
+            location.reload()
+            console.log(data)
+          });
         break;
       default:
         console.log("Sorry don't know what to do");

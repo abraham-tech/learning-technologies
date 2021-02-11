@@ -53,6 +53,7 @@ function App() {
       body: JSON.stringify(configuration),
     }).then(() => {
       console.log("sent");
+      location.reload()
     });
   };
 
