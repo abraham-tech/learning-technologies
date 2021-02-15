@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import Editor from "./JsonEditor";
+import Switch from "react-switch";
 
 const BASE = `http:${window.location.href.split(":")[1]}:8080/`;
 const StyledCardGrid = styled.div`
@@ -11,6 +12,14 @@ const StyledCardGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
   margin: 16px 0;
 `;
+
+const StyledSwitches = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 16px;
+    `
 
 const CardGrid = ({
   wide = false,
@@ -77,6 +86,18 @@ const CardGrid = ({
           </a>
         ))}
       </StyledCardGrid>
+
+      {/* <StyledSwitches>
+      <span>Reset board</span>
+        <Switch
+          onChange={()=>{}}
+          checked={true}
+          className="react-switch"
+        />
+      </StyledSwitches> 
+      */}
+
+
       <Editor />
     </div>
   );

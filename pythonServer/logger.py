@@ -17,15 +17,12 @@ class Logger:
     def _createLog(self, message):
         now = datetime.datetime.now()
         date = now.strftime("%Y%m%d")
-        #fileName = '/home/pi/Desktop/cornTest/logCron'+date+'.txt'
-        dir_path = os.path.dirname(os.path.realpath(__file__)) + '/logs/rpi.txt'
-        fileName = dir_path
+        writepath = '/home/pi/log.txt'
 
-        if os.path.isfile(fileName):
-            self.log = open(fileName, 'a')
-        else:
-            self.log = open(fileName, 'w+')
+        mode = 'a' if os.path.exists(writepath) else 'w'
+        print("Mode ", mode)
+        with open(writepath, mode) as f:
+            f.write('\n Executing at: '+now.strftime("%Y-%m-%d %H:%M:%S")+ ' \n' + message + '\n \n')
 
-        self.log.write('\n Executing at: '+now.strftime("%Y-%m-%d %H:%M:%S")+ ' \n' + message + '\n \n' )
 
 

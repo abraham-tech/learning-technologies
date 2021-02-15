@@ -14,7 +14,7 @@ const colors = {
     400: "#",
     300: "#",
     200: "#ffebe5",
-    100: "#fff5f2"
+    100: "#fff5f2",
   },
   pink: {
     main: "#f51f7e",
@@ -27,7 +27,7 @@ const colors = {
     400: "#",
     300: "#",
     200: "#fee8f2",
-    100: "#fef3f8"
+    100: "#fef3f8",
   },
   purpleA: {
     main: "#a200f2",
@@ -40,7 +40,7 @@ const colors = {
     400: "#",
     300: "#",
     200: "#f5e5fd",
-    100: "#faf2fe"
+    100: "#faf2fe",
   },
   purpleB: {
     main: "#651dff",
@@ -53,7 +53,7 @@ const colors = {
     400: "#",
     300: "#",
     200: "#efe8ff",
-    100: "#f7faff"
+    100: "#f7faff",
   },
   blueA: {
     main: "#2979ff",
@@ -66,7 +66,7 @@ const colors = {
     400: "#",
     300: "#",
     200: "#e9f1ff",
-    100: "#f4f8ff"
+    100: "#f4f8ff",
   },
   blueB: {
     main: "#009dff",
@@ -79,7 +79,7 @@ const colors = {
     400: "#",
     300: "#",
     200: "#e5f5ff",
-    100: "#f2faff"
+    100: "#f2faff",
   },
   cyan: {
     main: "#00bcd4",
@@ -92,7 +92,7 @@ const colors = {
     400: "#",
     300: "#",
     200: "#e5f8fa",
-    100: "#f2fbfd"
+    100: "#f2fbfd",
   },
   greenA: {
     main: "#00bfa5",
@@ -105,7 +105,7 @@ const colors = {
     400: "#",
     300: "#",
     200: "#e5f8f6",
-    100: "#f2fcfa"
+    100: "#f2fcfa",
   },
   greenB: {
     main: "#64dd17",
@@ -118,7 +118,7 @@ const colors = {
     400: "#",
     300: "#",
     200: "#effbe7",
-    100: "#f7fdf3"
+    100: "#f7fdf3",
   },
   yellow: {
     main: "#ffab00",
@@ -131,7 +131,7 @@ const colors = {
     400: "#",
     300: "#",
     200: "#ffab00",
-    100: "#fffbf2"
+    100: "#fffbf2",
   },
   orange: {
     main: "#ff6f00",
@@ -144,7 +144,7 @@ const colors = {
     400: "#",
     300: "#",
     200: "#fff0e5",
-    100: "#fff8f2"
+    100: "#fff8f2",
   },
   gray: {
     main: "#b1b5bc",
@@ -157,14 +157,14 @@ const colors = {
     400: "#",
     300: "#dfe3ea",
     200: "#eef2f8",
-    100: "#f1f5fb"
+    100: "#f1f5fb",
   },
   default: {
     headline: "#001738",
     subtitle: "#8492a6",
     primaryButton: "#2979ff",
-    icon: "#8492a6"
-  }
+    icon: "#8492a6",
+  },
 };
 
 const cards2 = [
@@ -203,7 +203,7 @@ const cards2 = [
     cardColor: colors["greenB"][100],
     borderColor: colors["greenB"][200],
     iconColor: colors["greenB"][1000],
-    counter: 22
+    counter: 22,
   },
   {
     logo: (
@@ -226,7 +226,7 @@ const cards2 = [
     cardColor: colors["greenA"][100],
     borderColor: colors["greenA"][200],
     iconColor: colors["greenA"][1000],
-    counter: 152
+    counter: 152,
   },
   {
     logo: (
@@ -246,7 +246,7 @@ const cards2 = [
     cardColor: colors["red"][100],
     borderColor: colors["red"][200],
     iconColor: colors["red"][1000],
-    counter: 97
+    counter: 97,
   },
   // {
   //   logo: (
@@ -292,7 +292,7 @@ const cards2 = [
     cardColor: colors["orange"][100],
     borderColor: colors["orange"][200],
     iconColor: colors["orange"][1000],
-    counter: 138
+    counter: 138,
   },
   {
     logo: (
@@ -312,8 +312,127 @@ const cards2 = [
     cardColor: colors["blueA"][100],
     borderColor: colors["blueA"][200],
     iconColor: colors["blueA"][1000],
-    counter: 1
-  }
+    counter: 1,
+  },
+
+  {
+    logo: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-thermometer"
+        viewBox="0 0 16 16"
+      >
+        <path d="M6 2a2 2 0 1 1 4 0v7.627a3.5 3.5 0 1 1-4 0V2zm2-1a1 1 0 0 0-1 1v7.901a.5.5 0 0 1-.25.433A2.499 2.499 0 0 0 8 15a2.5 2.5 0 0 0 1.25-4.666.5.5 0 0 1-.25-.433V2a1 1 0 0 0-1-1z" />
+        <path d="M9.5 12.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+      </svg>
+    ),
+    title: "Test Sensors",
+    cardColor: colors["yellow"][100],
+    borderColor: colors["yellow"][200],
+    iconColor: colors["yellow"][1000],
+    counter: 1,
+  },
+  {
+    logo: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-archive-fill"
+        viewBox="0 0 16 16"
+      >
+        <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
+      </svg>
+    ),
+    title: "Test Basement",
+    cardColor: colors["purpleB"][100],
+    borderColor: colors["purpleB"][200],
+    iconColor: colors["purpleB"][1000],
+    counter: 1,
+  },
+  {
+    logo: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-bookshelf"
+        viewBox="0 0 16 16"
+      >
+        <path d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM3 14h10v-3H3v3zm0-4h10V7H3v3zm0-4h10V3H3v3z" />
+      </svg>
+    ),
+    title: "Test floors",
+    cardColor: colors["greenB"][100],
+    borderColor: colors["greenB"][200],
+    iconColor: colors["greenB"][1000],
+    counter: 1,
+  },
+
+  {
+    logo: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-wrench"
+        viewBox="0 0 16 16"
+      >
+        <path d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019l.528.026.287.445.445.287.026.529L15 13l-.242.471-.026.529-.445.287-.287.445-.529.026L13 15l-.471-.242-.529-.026-.287-.445-.445-.287-.026-.529L11 13l.242-.471.026-.529.445-.287.287-.445.529-.026L13 11l.471.242z" />
+      </svg>
+    ),
+    title: "Test main pump",
+    cardColor: colors["cyan"][100],
+    borderColor: colors["cyan"][200],
+    iconColor: colors["cyan"][1000],
+    counter: 1,
+  },
+  {
+    logo: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-thermometer-half"
+        viewBox="0 0 16 16"
+      >
+        <path d="M8 1.75a.25.25 0 0 1 .25.25v9.02a1.5 1.5 0 1 1-.5 0V2A.25.25 0 0 1 8 1.75z" />
+        <path d="M6 2a2 2 0 1 1 4 0v7.627a3.5 3.5 0 1 1-4 0V2zm2-1a1 1 0 0 0-1 1v7.901a.5.5 0 0 1-.25.433A2.499 2.499 0 0 0 8 15a2.5 2.5 0 0 0 1.25-4.666.5.5 0 0 1-.25-.433V2a1 1 0 0 0-1-1z" />
+      </svg>
+    ),
+    title: "Read Temperature",
+    cardColor: colors["pink"][100],
+    borderColor: colors["pink"][200],
+    iconColor: colors["pink"][1000],
+    counter: 1,
+  },
+  {
+    logo: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-door-closed"
+        viewBox="0 0 16 16"
+      >
+        <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z" />
+        <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" />
+      </svg>
+    ),
+    title: "Test Basement Door",
+    cardColor: colors["purpleA"][100],
+    borderColor: colors["purpleA"][200],
+    iconColor: colors["purpleA"][1000],
+    counter: 1,
+  },
 ];
 const ease = "cubic-bezier(0.2, 0, 0.38, 0.9)";
 
@@ -321,5 +440,5 @@ export default {
   avatar,
   colors,
   cards2,
-  ease
+  ease,
 };
