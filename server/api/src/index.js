@@ -109,7 +109,7 @@ app.get('/reset',function(req,res){
 app.get("/test_sensors", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/scripts/test_sensors.py']);
   pyProg.stdout.on('data', function(data) {
       console.log(data.toString());
       response.send({
@@ -123,7 +123,7 @@ app.get("/test_sensors", function(request, response) {
 app.get("/test_basement", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/scripts/test_basement.py']);
   pyProg.stdout.on('data', function(data) {
       console.log(data.toString());
       response.send({
@@ -137,7 +137,7 @@ app.get("/test_basement", function(request, response) {
 app.get("/test_floors", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/scripts/test_floors.py']);
   pyProg.stdout.on('data', function(data) {
       console.log(data.toString());
       response.send({
@@ -151,7 +151,7 @@ app.get("/test_floors", function(request, response) {
 app.get("/test_main_pump", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/scripts/test_main_pump.py']);
   pyProg.stdout.on('data', function(data) {
       console.log(data.toString());
       response.send({
@@ -165,7 +165,7 @@ app.get("/test_main_pump", function(request, response) {
 app.get("/read_temperature", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/scripts/read_temperature.py']);
   pyProg.stdout.on('data', function(data) {
       console.log(data.toString());
       response.send({
@@ -179,7 +179,7 @@ app.get("/read_temperature", function(request, response) {
 app.get("/test_basement_door", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/scripts/test_basement_door.py']);
   pyProg.stdout.on('data', function(data) {
       console.log(data.toString());
       response.send({
