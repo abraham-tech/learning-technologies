@@ -24,7 +24,7 @@ app.get("/turn_on", function(request, response) {
       console.log(data.toString());
       response.send({
         status: "success",
-        email: "Growing light turned on"
+        message: data.toString()
       });
   });
 });
@@ -37,7 +37,7 @@ app.get("/turn_off", function(request, response) {
       console.log(data.toString());
       response.send({
         status: "success",
-        email: "Growing light turned off"
+        message: data.toString()
       });
   });
 });
@@ -50,7 +50,7 @@ app.get("/water_cabins", function(request, response) {
       console.log(data.toString());
       response.send({
         status: "success",
-        email: "Cabins are watered"
+        message: data.toString()
       });
   });
 });
@@ -100,7 +100,7 @@ app.get('/reset',function(req,res){
       console.log(data.toString());
       res.send({
         status: "success",
-        message: "Reset configuration file"
+        message: data.toString()
       });
   });
 });

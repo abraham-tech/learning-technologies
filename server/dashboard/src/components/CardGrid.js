@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import Editor from "./JsonEditor";
-import Switch from "react-switch";
-
+import { Type1, Type3 } from "./Typography";
 const BASE = `http:${window.location.href.split(":")[1]}:8080/`;
 const StyledCardGrid = styled.div`
   position: relative;
@@ -13,13 +12,17 @@ const StyledCardGrid = styled.div`
   margin: 16px 0;
 `;
 
-const StyledSwitches = styled.div`
+const StyledDiv = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  align-items: space-around;
   margin: 16px;
+  margin-bottom: 60px;
 `;
+
+const NewlineText = (text) => {
+  return text.split('\n').map(str => <p>{str}</p>);
+}
 
 const CardGrid = ({
   wide = false,
@@ -29,6 +32,8 @@ const CardGrid = ({
   avatar,
   ...props
 }) => {
+  const [message, setMessage] = useState("")
+  const [isOpen, setIsOpen] = useState(false)
   const gridClasses = wide ? "grid grid--wide" : "grid";
   const callAction = (index) => {
     console.log("index", index);
@@ -58,7 +63,8 @@ const CardGrid = ({
         fetch(`${BASE}reset`)
           .then((response) => response.json())
           .then((data) => {
-            location.reload();
+            //data.toString();
+            setMessage(data.message)
             console.log(data);
           });
         break;
@@ -66,15 +72,14 @@ const CardGrid = ({
       case 5:
         fetch(`${BASE}test_sensors`)
           .then((response) => response.json())
-          .then((data) => console.log(data));
+          .then((data) =>  setMessage(data.message));
         break;
 
       case 6:
         fetch(`${BASE}test_basement`)
           .then((response) => response.json())
           .then((data) => {
-            location.reload();
-            console.log(data);
+            setMessage(data.message)
           });
         break;
 
@@ -82,8 +87,7 @@ const CardGrid = ({
         fetch(`${BASE}test_floors`)
           .then((response) => response.json())
           .then((data) => {
-            location.reload();
-            console.log(data);
+            setMessage(data.message)
           });
         break;
 
@@ -91,8 +95,7 @@ const CardGrid = ({
         fetch(`${BASE}test_main_pump`)
           .then((response) => response.json())
           .then((data) => {
-            location.reload();
-            console.log(data);
+            setMessage(data.message)
           });
         break;
 
@@ -100,8 +103,7 @@ const CardGrid = ({
         fetch(`${BASE}test_read_temperature`)
           .then((response) => response.json())
           .then((data) => {
-            location.reload();
-            console.log(data);
+            setMessage(data.message)
           });
         break;
 
@@ -109,8 +111,7 @@ const CardGrid = ({
         fetch(`${BASE}test_basement_door`)
           .then((response) => response.json())
           .then((data) => {
-            location.reload();
-            console.log(data);
+            setMessage(data.message)
           });
         break;
 
@@ -118,8 +119,7 @@ const CardGrid = ({
         fetch(`${BASE}test_reset_boards`)
           .then((response) => response.json())
           .then((data) => {
-            location.reload();
-            console.log(data);
+            setMessage(data.message)
           });
         break;
       default:
@@ -142,16 +142,12 @@ const CardGrid = ({
           </a>
         ))}
       </StyledCardGrid>
-
-      {/* <StyledSwitches>
-      <span>Reset board</span>
-        <Switch
-          onChange={()=>{}}
-          checked={true}
-          className="react-switch"
-        />
-      </StyledSwitches> 
-      */}
+        <StyledDiv>
+        <h1>Terminal Log</h1>
+        <Type1>
+        {NewlineText(message)}
+        </Type1>
+        </StyledDiv>
 
       <Editor />
     </div>
