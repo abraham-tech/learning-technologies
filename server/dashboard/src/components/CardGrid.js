@@ -41,31 +41,29 @@ const CardGrid = ({
       case 0:
         fetch(`${BASE}turn_on`)
           .then((response) => response.json())
-          .then((data) => console.log(data));
+          .then((data) => setMessage(data.message));
         break;
       case 1:
         fetch(`${BASE}turn_off`)
           .then((response) => response.json())
-          .then((data) => console.log(data));
+          .then((data) => setMessage(data.message));
         break;
       case 2:
         fetch(`${BASE}open_door`)
           .then((response) => response.json())
-          .then((data) => console.log(data));
+          .then((data) => setMessage(data.message));
         break;
 
       case 3:
         fetch(`${BASE}water_cabins`)
           .then((response) => response.json())
-          .then((data) => console.log(data));
+          .then((data) => setMessage(data.message));
         break;
       case 4:
         fetch(`${BASE}reset`)
           .then((response) => response.json())
           .then((data) => {
-            //data.toString();
             setMessage(data.message)
-            console.log(data);
           });
         break;
 
