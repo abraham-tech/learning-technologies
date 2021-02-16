@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import Editor from "./JsonEditor";
@@ -14,12 +14,12 @@ const StyledCardGrid = styled.div`
 `;
 
 const StyledSwitches = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin: 16px;
-    `
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 16px;
+`;
 
 const CardGrid = ({
   wide = false,
@@ -48,22 +48,78 @@ const CardGrid = ({
           .then((response) => response.json())
           .then((data) => console.log(data));
         break;
+
       case 3:
-        fetch(`${BASE}close_door`)
-          .then((response) => response.json())
-          .then((data) => console.log(data));
-        break;
-      case 4:
         fetch(`${BASE}water_cabins`)
           .then((response) => response.json())
           .then((data) => console.log(data));
         break;
-      case 5:
+      case 4:
         fetch(`${BASE}reset`)
           .then((response) => response.json())
           .then((data) => {
-            location.reload()
-            console.log(data)
+            location.reload();
+            console.log(data);
+          });
+        break;
+
+      case 5:
+        fetch(`${BASE}test_sensors`)
+          .then((response) => response.json())
+          .then((data) => console.log(data));
+        break;
+
+      case 6:
+        fetch(`${BASE}test_basement`)
+          .then((response) => response.json())
+          .then((data) => {
+            location.reload();
+            console.log(data);
+          });
+        break;
+
+      case 7:
+        fetch(`${BASE}test_floors`)
+          .then((response) => response.json())
+          .then((data) => {
+            location.reload();
+            console.log(data);
+          });
+        break;
+
+      case 8:
+        fetch(`${BASE}test_main_pump`)
+          .then((response) => response.json())
+          .then((data) => {
+            location.reload();
+            console.log(data);
+          });
+        break;
+
+      case 9:
+        fetch(`${BASE}read_temperature`)
+          .then((response) => response.json())
+          .then((data) => {
+            location.reload();
+            console.log(data);
+          });
+        break;
+
+      case 10:
+        fetch(`${BASE}test_basement_door`)
+          .then((response) => response.json())
+          .then((data) => {
+            location.reload();
+            console.log(data);
+          });
+        break;
+
+      case 11:
+        fetch(`${BASE}reset`)
+          .then((response) => response.json())
+          .then((data) => {
+            location.reload();
+            console.log(data);
           });
         break;
       default:
@@ -96,7 +152,6 @@ const CardGrid = ({
         />
       </StyledSwitches> 
       */}
-
 
       <Editor />
     </div>
