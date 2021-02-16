@@ -97,7 +97,7 @@ const CardGrid = ({
         break;
 
       case 9:
-        fetch(`${BASE}read_temperature`)
+        fetch(`${BASE}test_read_temperature`)
           .then((response) => response.json())
           .then((data) => {
             location.reload();
@@ -115,7 +115,7 @@ const CardGrid = ({
         break;
 
       case 11:
-        fetch(`${BASE}reset`)
+        fetch(`${BASE}test_reset_boards`)
           .then((response) => response.json())
           .then((data) => {
             location.reload();
