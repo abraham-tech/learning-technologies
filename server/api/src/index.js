@@ -100,7 +100,91 @@ app.get('/reset',function(req,res){
       console.log(data.toString());
       res.send({
         status: "success",
-        message: "Growing light turned off"
+        message: "Reset configuration file"
+      });
+  });
+});
+
+
+app.get("/test_sensors", function(request, response) {
+  response.setHeader("Content-Type", "application/json");
+  response.header("Access-Control-Allow-Origin", "*");
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  pyProg.stdout.on('data', function(data) {
+      console.log(data.toString());
+      response.send({
+        status: "success",
+        email: "Growing light turned off"
+      });
+  });
+});
+
+
+app.get("/test_basement", function(request, response) {
+  response.setHeader("Content-Type", "application/json");
+  response.header("Access-Control-Allow-Origin", "*");
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  pyProg.stdout.on('data', function(data) {
+      console.log(data.toString());
+      response.send({
+        status: "success",
+        email: "Growing light turned off"
+      });
+  });
+});
+
+
+app.get("/test_floors", function(request, response) {
+  response.setHeader("Content-Type", "application/json");
+  response.header("Access-Control-Allow-Origin", "*");
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  pyProg.stdout.on('data', function(data) {
+      console.log(data.toString());
+      response.send({
+        status: "success",
+        email: "Growing light turned off"
+      });
+  });
+});
+
+
+app.get("/test_main_pump", function(request, response) {
+  response.setHeader("Content-Type", "application/json");
+  response.header("Access-Control-Allow-Origin", "*");
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  pyProg.stdout.on('data', function(data) {
+      console.log(data.toString());
+      response.send({
+        status: "success",
+        email: "Growing light turned off"
+      });
+  });
+});
+
+
+app.get("/read_temperature", function(request, response) {
+  response.setHeader("Content-Type", "application/json");
+  response.header("Access-Control-Allow-Origin", "*");
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  pyProg.stdout.on('data', function(data) {
+      console.log(data.toString());
+      response.send({
+        status: "success",
+        email: "Growing light turned off"
+      });
+  });
+});
+
+
+app.get("/test_basement_door", function(request, response) {
+  response.setHeader("Content-Type", "application/json");
+  response.header("Access-Control-Allow-Origin", "*");
+  const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
+  pyProg.stdout.on('data', function(data) {
+      console.log(data.toString());
+      response.send({
+        status: "success",
+        email: "Growing light turned off"
       });
   });
 });
