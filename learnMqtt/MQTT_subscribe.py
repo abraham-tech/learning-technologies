@@ -2,16 +2,16 @@ import paho.mqtt.client as mqtt
 import time
 
 def on_message(client, userdata, message):
-    print("msg")
+    print("message", message.payload.decode('utf-8'))
 
-mqttBroker = "mqtt.eclipse.org"
+mqttBroker = "test.mosquitto.org"
 
 client = mqtt.Client("Smartphone")
 client.connect(mqttBroker)
 
 client.loop_start()
 
-client.subscribe("TEMPERATURE")
+client.subscribe("gronska/engine")
 client.on_message=on_message
 
 time.sleep(30)
