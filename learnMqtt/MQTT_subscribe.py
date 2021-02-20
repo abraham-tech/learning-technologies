@@ -1,6 +1,8 @@
 import paho.mqtt.client as mqtt
 import time
+import uuid
 
+address = str(uuid.getnode())
 def on_message(client, userdata, message):
     print("message", message.payload.decode('utf-8'))
 
@@ -11,7 +13,7 @@ client.connect(mqttBroker)
 
 client.loop_start()
 
-client.subscribe("gronska/engine")
+client.subscribe(f"gronska/engine/{address}")
 client.on_message=on_message
 
 time.sleep(30)
