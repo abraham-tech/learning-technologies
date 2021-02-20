@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+
+{% block head %}
+<title>Home page</title>
+
+{%endblock%}
+
+{% block body %}
+<div class="container"
+   <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" style="background-color: #fff !important;" >
+    <div class="container">
+        <a class="navbar-brand" href="/"> FlaskReddit</a>
+        <button class="navbar-toggle" data-toggle="collapse" type="button" data-target="#navbarNavAltMarkup" aria-expanded="false" 
+        aria-controls="navbarNavAltMarkup" aria-label="Toggle navigation">
+            <span class="navbar-toggle-icon">
+            </span>
+        </button>
+
+        <form class="mx-2 my-auto d-inline w-100" style="margin-left: 100px !important; margin-right: 100px !important;">
+            <input class="form-controls mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+        </form>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item btn btn-outline-primary mx-2" href="/login"> Login</a>
+                    <a class="nav-item btn btn-primary" href="/signup"> Signup</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   </nav
+</div>
+{%endblock%}
