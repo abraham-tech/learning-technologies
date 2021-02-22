@@ -13,7 +13,7 @@ client.connect(mqttBroker)
 
 client.loop_start()
 
-client.subscribe(f"gronska/engine/{address}")
+client.subscribe("gronska/engine")
 client.on_message=on_message
 
 time.sleep(30)

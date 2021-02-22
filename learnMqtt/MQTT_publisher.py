@@ -11,9 +11,9 @@ client.connect(mqttBroker)
 
 
 while True:
-    client.publish("gronska/devices/module/1", "DOOR_LOCK_1_ON")
+    client.publish("gronska/engine", "DOOR_LOCK_1_ON")
     time.sleep(1)
-    client.publish("gronska/devices/module/1", "DOOR_LOCK_1_OFF")
+    client.publish("gronska/engine", "DOOR_LOCK_1_OFF")
     time.sleep(1)
 
 
