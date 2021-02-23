@@ -13,9 +13,9 @@ client.connect(mqttBroker)
 
 client.loop_start()
 
-client.subscribe("gronska/engine")
+client.subscribe("gronska/engine/IKEA_SUB")
 client.on_message=on_message
 
-time.sleep(30)
+time.sleep(3000)
 client.loop_stop()
 

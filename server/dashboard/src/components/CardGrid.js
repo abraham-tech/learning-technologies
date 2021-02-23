@@ -49,18 +49,18 @@ const CardGrid = ({
           .then((data) => setMessage(data.message));
         break;
       case 2:
-        fetch(`${BASE}open_door`)
+        fetch(`${BASE}open_lock`)
           .then((response) => response.json())
           .then((data) => setMessage(data.message));
         break;
 
       case 3:
-        fetch(`${BASE}water_cabins`)
+        fetch(`${BASE}fan_on`)
           .then((response) => response.json())
           .then((data) => setMessage(data.message));
         break;
       case 4:
-        fetch(`${BASE}reset`)
+        fetch(`${BASE}fan_off`)
           .then((response) => response.json())
           .then((data) => {
             setMessage(data.message)
@@ -68,13 +68,13 @@ const CardGrid = ({
         break;
 
       case 5:
-        fetch(`${BASE}test_sensors`)
+        fetch(`${BASE}water_on`)
           .then((response) => response.json())
           .then((data) =>  setMessage(data.message));
         break;
 
       case 6:
-        fetch(`${BASE}test_basement`)
+        fetch(`${BASE}water_off`)
           .then((response) => response.json())
           .then((data) => {
             setMessage(data.message)
@@ -140,14 +140,14 @@ const CardGrid = ({
           </a>
         ))}
       </StyledCardGrid>
-        <StyledDiv>
+        {/* <StyledDiv>
         <h1>Terminal Log</h1>
         <Type1>
         {NewlineText(message)}
         </Type1>
-        </StyledDiv>
+        </StyledDiv> */}
 
-      <Editor />
+      {/* <Editor /> */}
     </div>
   );
 };
