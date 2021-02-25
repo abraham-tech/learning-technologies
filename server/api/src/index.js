@@ -20,19 +20,9 @@ app.get("/", function(request, response) {
 app.get("/turn_on", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  // const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_on_growing_light.py'], {cwd: '/home/pi/Gronska/schedule/'});
-  // pyProg.stdout.on('data', function(data) {
 
-  //     console.log(data.toString());
-      // response.send({
-      //   status: "success",
-      //   message: data.toString()
-      // });
-  // });
-
-
-        
-  client.publish('gronska/engine/IKEA_SUB', '"GROW_LIGHT_ON"')
+  id = request.originalUrl.split("=")[1]
+  client.publish(`gronska/engine/${id}/pub`, "GROW_LIGHT_ON")
   response.send({
     status: "success",
     message: 'success'
@@ -44,29 +34,23 @@ app.get("/turn_on", function(request, response) {
 app.get("/turn_off", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  // const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/script_turn_off_growing_light.py']);
-  // pyProg.stdout.on('data', function(data) {
-  //     console.log(data.toString());
-  //     response.send({
-  //       status: "success",
-  //       message: data.toString()
-  //     });
-  // });
 
-  client.publish('presence', 'Hello mqtt')
-  client.publish('gronska/engine/IKEA_SUB', '"GROW_LIGHT_OFF"')
+  id = request.originalUrl.split("=")[1]
+  client.publish(`gronska/engine/${id}/pub`, "GROW_LIGHT_OFF")
+  // client.publish('gronska/engine/IKEA_SUB', '"GROW_LIGHT_OFF"')
     response.send({
     status: "success",
     message: 'success'
   });
-
 
 });
 
 app.get("/open_lock", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  client.publish('gronska/engine/IKEA_SUB', '"DOOR_LOCK_1"')
+  id = request.originalUrl.split("=")[1]
+  client.publish(`gronska/engine/${id}/pub`, "DOOR_LOCK_1")
+  // client.publish('gronska/engine/IKEA_SUB', '"DOOR_LOCK_1"')
     response.send({
     status: "success",
     message: 'success'
@@ -77,7 +61,9 @@ app.get("/open_lock", function(request, response) {
 app.get("/fan_on", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  client.publish('gronska/engine/IKEA_SUB', '"FAN_ON"')
+  id = request.originalUrl.split("=")[1]
+  client.publish(`gronska/engine/${id}/pub`, "FAN_ON")
+  // client.publish('gronska/engine/IKEA_SUB', '"FAN_ON"')
     response.send({
     status: "success",
     message: 'success'
@@ -87,7 +73,9 @@ app.get("/fan_on", function(request, response) {
 app.get("/fan_off", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  client.publish('gronska/engine/IKEA_SUB', '"FAN_OFF"')
+  id = request.originalUrl.split("=")[1]
+  client.publish(`gronska/engine/${id}/pub`, "FAN_OFF")
+  // client.publish('gronska/engine/IKEA_SUB', '"FAN_OFF"')
     response.send({
     status: "success",
     message: 'success'
@@ -97,7 +85,9 @@ app.get("/fan_off", function(request, response) {
 app.get("/water_on", function(request, response) {
   response.setHeader("Content-Type", "application/json");
   response.header("Access-Control-Allow-Origin", "*");
-  client.publish('gronska/engine/IKEA_SUB', '"WATERING_ON"')
+  id = request.originalUrl.split("=")[1]
+  client.publish(`gronska/engine/${id}/pub`, "WATERING_ON")
+  // client.publish('gronska/engine/IKEA_SUB', '"WATERING_ON"')
     response.send({
     status: "success",
     message: 'success'
@@ -105,8 +95,11 @@ app.get("/water_on", function(request, response) {
 });
 
 app.get('/water_off',function(request, response){
-
-  client.publish('gronska/engine/IKEA_SUB', '"WATERING_OFF"')
+  response.setHeader("Content-Type", "application/json");
+  response.header("Access-Control-Allow-Origin", "*");
+  id = request.originalUrl.split("=")[1]
+  client.publish(`gronska/engine/${id}/pub`, "WATERING_OFF")
+  // client.publish('gronska/engine/IKEA_SUB', '"WATERING_OFF"')
     response.send({
     status: "success",
     message: 'success'
@@ -198,31 +191,6 @@ app.get('/water_off',function(request, response){
 // });
 
 
-// app.get("/test_basement_door", function(request, response) {
-//   response.setHeader("Content-Type", "application/json");
-//   response.header("Access-Control-Allow-Origin", "*");
-//   const pyProg = spawn('python3', ['/home/pi/Gronska/schedule/test_basement_door.py'],{cwd:'/home/pi/Gronska/schedule'});
-//   pyProg.stdout.on('data', function(data) {
-//       console.log(data.toString());
-//       response.send({
-//         status: "success",
-//         message: data.toString()
-//       });
-//   });
-// });
-
-// app.get("/test_reset_boards", function(request, response) {
-//   response.setHeader("Content-Type", "application/json");
-//   response.header("Access-Control-Allow-Origin", "*");
-//   const pyProg = spawn('python3', ['/home/pi/Gronska/test_reset_boards.py'],{cwd:'/home/pi/Gronska/schedule'});
-//   pyProg.stdout.on('data', function(data) {
-//       console.log(data.toString());
-//       response.send({
-//         status: "success",
-//         message: data.toString()
-//       });
-//   });
-// });
 
 const listener = app.listen("8080", function() {
   console.log("Your app is listening on port " + listener.address().port);
