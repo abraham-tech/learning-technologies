@@ -33,4 +33,35 @@ const employees = [
 
 const filteredEmployees = employees.filter(employee => employee.age > 30)
 
-console.log(filteredEmployees)
+const indexOfEmployees = filteredEmployees.indexOf(employee => employee.name == 'Mike Sheridan');
+
+console.log(indexOfEmployees)
+
+//check if all positive or not 
+
+// let numbers = [10, -30, 20, 50];
+
+// const checkPositive = numbers.every(number => number >= 0 )
+
+// console.log('result ', checkPositive)
+
+
+// const checkSomePositive = numbers.some(number => number >= 0 )
+
+// console.log('result ', checkSomePositive)
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// const sum = numbers.reduce((sum, number) => sum + number, 0);
+
+// console.log('result ', sum)
+
+
+const coordinates = [
+    { x: 1, y: 2 }, 
+    { x: 2, y: 3 }, 
+    { x: 3, y: 4 }
+  ];
+
+  const sum = coordinates.reduce((sum,current)=> sum+current.y,0);
+  console.log('result ', sum)
